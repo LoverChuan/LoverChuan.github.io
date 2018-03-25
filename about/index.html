@@ -12,7 +12,7 @@
     
     
     
-    <title>pinkex(*^o^*)</title>
+    <title>about | pinkex(*^o^*)</title>
     <link href=”https://loverchuan.github.io“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -89,7 +89,7 @@
             <ul class="nav navbar-nav" id="menu-gal">
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/">
                         <i class="fa fa-home"></i>首页
                     </a>
@@ -125,7 +125,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -140,109 +140,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<div id="article-list">
-     
-     
-     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
-    
-    <div class="data-article hidden-xs">
-        <span class="month">03月</span>
-        <span class="day">25</span>
-    </div>
-    <!-- 大型设备文章 -->
-    <section class="hidden-xs">
+                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+
+
+<article class="article well article-body" id="article">
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/03/25/test/">
-                    <span>Test</span>
-                </a>
+                <a href="/about/index.html">about</a>
             </h1>
         </div>
         <div class="tag-article">
-            
-            
-            <!-- TODO 添加评论统计 -->
-            <!--<span class="label label-gal">
-                <i class="fa fa-comments"></i>
-                <a href="/2018/03/25/test/#comments">739</a>
-            </span>-->
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-03-25
+            </span>
         </div>
-        <div class="alert alert-gal article-body content-article">
-            <div class="item">
-                <a href="/2018/03/25/test/">
-                    <div class="img">
-                        
-                        <img src="/imgs/preview/preview22.jpg" alt="Test">
-                    </div>
-                    <div class="info">
-                        
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="visible-xs">
-        <div class="title-article">
-            <center>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
                 <h4>
-                    <a href="/2018/03/25/test/">
-                        <span>Test</span>
-                    </a>
+                    <a href="/about/index.html">about</a>
                 </h4>
-            </center>
-        </div>
-        <p></p>
-        <center>
-            <i class="fa fa-calendar"></i> 2018-03-25
-        </center>
-        <p></p>
-        <p></p>
-        <center>
-            
-            
-        </center>
-        <p></p>
-        <div class="alert alert-gal article-body content-article">
-            <p style="text-align: center;">
-                <a href="/2018/03/25/test/">
-                    
-                    <img src="/imgs/preview/preview7.jpg" alt="Test">
-                </a>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-03-25
             </p>
-        </div>
-        
-        <a class="btn btn-danger pull-right read-more btn-block" href="/2018/03/25/test/">
-            阅读全文
-            <!--<span class="badge">739</span>-->
-        </a>
-    </section>
-</div>
-     
-</div>
-<!-- 前方最多7个 < 1 2 3 4 5 6 -->
-<!-- 前方超过第7页则分为 < 1 ... (n - 3) (n - 2) (n - 1) n, 此时前面为固定的6个 -->
-
-<!-- 后方最多8个 (n + 1) 到 (n + 7) > -->
-<!-- 如果末页和当前页相差超过7, 此时后面为固定的6个, (n + 1) (n + 2) (n + 3) ... total > -->
+        </center>
+    </div>
+    <div class="content-article">
+        <font face="ubuntu Mono"><br><br>这是我的第三个博客，前两个分别在<code>博客园</code>和<code>WordPress</code>上，但实在自由空间太少了。还是Github好！<br>来自<code>浙江江山</code>的一只小<code>OIer</code>。<br>求学轨迹：<code>江山实验小学--&gt;江山二中--&gt;杭州学军中学</code>。（吐槽一句，进XJ容易，活下来难QAQ）<br>是一只热爱学(隔)习(膜)的<code>小蒟蒻</code>，已经是OIer龄已有3年，但依然很菜。<br>文化课现在连装B都不行了，菜到对不住我自己つ﹏⊂<br>爱好说广泛也并不广，最爱足球，立场<code>萨米+kop</code>，当然作为一个理性的球迷，当然什么都喜欢，只是偏好而已。<br><br>挂一张梅老板的图~~欢迎侃球<br><img src="graphlib/messi.jpg" alt="Messi"><br>QQ ：1121147896<br>Email ：<a href="mailto:w.h.chuan@foxmail.com" target="_blank" rel="noopener">w.h.chuan@foxmail.com</a><br>Blog ：loverchuan.github.io<br><br></font>
+    </div>
+</article>
 
 
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'about'
+    }
+</script>
 
-<div id="gal-pagination" class="clearfix">
-    <ul class="pagination pagination-gal pull-right">
-        
-        
-        
-        
-        <li class="current">
-            <span>1</span>
-        </li>
-        
-        
-        
-        
-    </ul>
-</div>
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -336,13 +278,13 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/about/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/about/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/about/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
