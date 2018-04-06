@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="PinkEx_Wang">
     
@@ -12,7 +12,7 @@
     
     
     
-    <title>任意长度fft | pinkex(*^o^*)</title>
+    <title>555... | pinkex(*^o^*)</title>
     <link href=”https://loverchuan.github.io“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -44,10 +44,10 @@
           previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
         }
       }
-    </script>-->
+    </script>--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 <body>
-    <!-- 背景轮播图功能 -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- 背景轮播图功能 -->
     <section class="hidden-xs">
     <ul class="cb-slideshow">
         <li><span>天若</span></li>
@@ -129,6 +129,10 @@
                             <a href="/tags/数学/">数学</a>
                         </li>
                         
+                        <li>
+                            <a href="/tags/闲谈/">闲谈</a>
+                        </li>
+                        
                         
                         
                     </ul>
@@ -158,13 +162,13 @@
         <i class="fa fa-home"></i>
         <a href="https://loverchuan.github.io">pinkex(*^o^*)</a>
         >
-        <span>任意长度fft</span>
+        <span>555...</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/04/06/任意长度fft/">任意长度fft</a>
+                <a href="/2018/04/06/555.../">555...</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -172,7 +176,7 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/数学/">数学</a>
+                <a href="/tags/闲谈/">闲谈</a>
                 
             </span>
             
@@ -187,7 +191,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/04/06/任意长度fft/">任意长度fft</a>
+                    <a href="/2018/04/06/555.../">555...</a>
                 </h4>
             </div>
             <p>
@@ -197,7 +201,7 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/数学/">数学</a>
+                <a href="/tags/闲谈/">闲谈</a>
                 
                 
                 
@@ -207,38 +211,14 @@
     <div class="content-article">
         <font face="ubuntu mono">
 
-
-
-
-$$ 
-f(n)=\begin{cases}
-n/2, & \text{如果$ x<=2 $}\\="" 3n+1,="" &="" \text{如果$="" x="">2 $}
-\end{cases}
-$$
-
-概念：循环卷积
-$$(c_i=\sum_{j,k>=0}^{n-1}a_j\cdot{b_k}\cdot{[j+k\equiv{i}\ mod\ n]})$$
-
-线性卷积$$c_i=\sum_{j=-\infty}^{+\infty}a_j\cdot{b_{i-j}}$$。  
-事实上，在做FFT时，我们做的是循环卷积。
-并且一般FFT以2为基，当n是2的幂次方时，有$c_i=\sum_{j=0}^{n-1}a_j\cdot{b_{i-j}}$。但是这意味着如果n不是2的幂次，就要重新选择基数了。  
-那现在考虑计算任意长度DFT。  
-据说有两种算法，一种是混合基FFT，另一种就是接下来要介绍的$Bluestein's\ Algorithm$（非常有名啊）。  
-我们知道，对于$a$的DFT，即$A_i=\sum_{j=0}^{n-1}a_j(\omega_{n}^i)^j$。有  
-$$A_k=\sum_{j=0}^{n-1}a_j(\omega^k)^j=\sum_{j=0}^{n-1}a_j\omega^{jk}=\sum_{j=0}^{n-1}a_j\omega^{k^2+j^2-(k-j)^2 \over 2}$$
-$$=\omega^{k^2\over 2}\sum_{j=0}^{n-1}a_j\omega^{j^2\over2}\cdot{\omega^{-(k-j)^2\over2}}$$
-
-设$X_j=a_j\omega^{j^2\over 2},Y_j=\omega^{-{j^2\over 2}}$，则有
-$$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
-
-这样，上面的式子化成了一个类似于卷积形式（但还差一步），可以和“[ZJOI 2014]力”比较一下，运用数组偏移的思想搞成卷积形式，然后后面补0直到长度为2的幂次，就可以做基为2的FFT了。  
-上面的算法就是$$Bluestein's\ Algorithm$$。  
-以下引用周fofo巨佬pdf里面的一段话：
-“我们并没有用到$\omega$的任何性质，所以上式中的$\omega$可以换成任意一个数$z$。这样的变换称为$Chirp\ Z-Transform(CZT)$，可见CZT是DFT的广义形式。”  
-
-感谢周fofo巨佬的pdf。
-
-</=2></font>
+555，数学公式是什么鬼操作哇，再也不想搞博客了。~~（生无可恋脸—）~~
+<br>
+哦，那个什么，话说卧铺竟然3-0 ManCity，真是令人震惊的操作。。
+<br>
+还有私密文章怎么搞啊，有木有大佬教教我？拿着一个这么好的模板，却傻用不来。
+<br>
+果然是机会到手，却毫无卵用的人。。
+</font>
     </div>
 </article>
 
@@ -248,7 +228,7 @@ $$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '任意长度fft'
+      window.commentConfig.title = '555...'
     }
 </script>
 
@@ -309,7 +289,7 @@ $$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/04/06/任意长度fft/">任意长度fft</a>
+                    <a href="/2018/04/06/555.../">555...</a>
                 </span>
             </li>
             
@@ -343,7 +323,7 @@ $$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/04/06/任意长度fft/">任意长度fft</a>
+                    <a href="/2018/04/06/555.../">555...</a>
                 </span>
             </li>
             
@@ -356,19 +336,21 @@ $$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/04/06/任意长度fft/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/04/06/555.../index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/04/06/任意长度fft/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/04/06/555.../index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/04/06/任意长度fft/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/04/06/555.../index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/数学/" style="font-size: 14.445151034280823px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 14.283476270757818px;" class="tag-cloud-link">数学</a>
+    
+    <a href="/tags/闲谈/" style="font-size: 15.688466978057354px;" class="tag-cloud-link">闲谈</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -407,10 +389,13 @@ $$A_k=\omega^{k^2\over 2}\sum_{j=0}^{n-1}X_j\cdot{Y_{k-j}}$$
     </div>
 </footer>
 
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 <!-- 回到顶端 -->
 <div id="gal-gotop">
     <i class="fa fa-angle-up"></i>
-</div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 <script src="/js/activate-power-mode.js"></script>
 <script>
