@@ -12,7 +12,7 @@
     
     
     
-    <title>Test | pinkex(*^o^*)</title>
+    <title>数据结构开坑-codeforces | pinkex(*^o^*)</title>
     <link href=”https://loverchuan.github.io“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -142,15 +142,15 @@
                         
                         
                         <li>
-                            <a href="/tags/群论/">群论</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/多校/">多校</a>
                         </li>
                         
                         <li>
                             <a href="/tags/hdu/">hdu</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/数据结构/">数据结构</a>
                         </li>
                         
                         
@@ -182,19 +182,28 @@
         <i class="fa fa-home"></i>
         <a href="https://loverchuan.github.io">pinkex(*^o^*)</a>
         >
-        <span>Test</span>
+        <span>数据结构开坑-codeforces</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/03/25/test/">Test</a>
+                <a href="/2018/09/10/数据结构开坑/">数据结构开坑-codeforces</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-03-25
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/数据结构/">数据结构</a>, 
+                
+                <a href="/tags/codeforces/">codeforces</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-09-10
             </span>
             
         </div>
@@ -204,34 +213,28 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/03/25/test/">Test</a>
+                    <a href="/2018/09/10/数据结构开坑/">数据结构开坑-codeforces</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-03-25
+                <i class="fa fa-calendar"></i> 2018-09-10
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/数据结构/">数据结构</a>, 
+                
+                <a href="/tags/codeforces/">codeforces</a>
+                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>It is only A test.<br>(我好菜啊，完全不会MarkDown。。)</p>
-<ul>
-<li><p><a href="https://www.luogu.org/" target="_blank" rel="noopener">我是超链接-&gt;luogu</a></p>
-</li>
-<li><p><img src="https://cdn.luogu.org/upload/pic/14650.png" alt="我是图片^o^"></p>
-</li>
-</ul>
-<hr>
-<blockquote>
-<p>苟利国家生死以，岂因祸福避趋之</p>
-<p><strong>苟利国家生死以，岂因祸福避趋之</strong></p>
-<p><em>苟利国家生死以，岂因祸福避趋之</em></p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>据说有‘行内代码‘这种操作？！好像没有搞出来233<br><code>update 有了</code><br>还有数学公式什么的，以后再搞，要回去了。。<br>现在似乎还有代码高亮和数学公式没怎么测试。</p>
+        <p>准备开一个坑填一下。<br>计划：尽可能多做一些通过数量150~400的data structure。<br>这里留一些题解吧。</p>
+<h2 id="338E-Optimize"><a href="#338E-Optimize" class="headerlink" title="338E.Optimize!"></a>338E.Optimize!</h2><p>过题人数：391<br>通过情况：2A<br>题目大意：<br>给你一份伪代码，要你优化这份代码。<br>伪代码描述的问题转换一下大概是：给你两个数组<code>a[1..len]</code>和<code>b[1..n]</code>，对于每一个<code>1&lt;=i&lt;=n-len+1</code>，求满足<code>a[1..len]</code>和<code>b[i..i+len-1]</code>能完全匹配的数量。<br>完全匹配是指把<code>2len</code>个数两两匹配（<code>a</code>中的去匹配<code>b</code>中的），所有匹配中在<code>b</code>中选的数一定不小于在<code>a</code>中选的数。<br>题解：<br>考虑<code>a</code>中的每一个数<code>a[i]</code>分别有多少个<code>b</code>中的数可以与其匹配，设个数为<code>c[i]</code>（假设<code>b</code>从小到大排序）。<br>那么显然，要满足<code>c[len]&gt;=1</code>，<code>c[len-1]&gt;=2</code>……<br>这样对于一段区间，从前面的区间继承过来仅仅多了一个数，少了一个数，分别修改影响到的区间就行了。（事实上是个前缀区间）<br>最后怎么样能判定一个区间是否可行？<br>要满足<code>min(c[i]-(len-i+1))&gt;=0</code>。处理方法就是在线段树中对应节点的权值先减掉后面的部分就行了。<br>复杂度<code>O(nlogn)</code>。</p>
 
     </div>
 </article>
@@ -242,7 +245,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'Test'
+      window.commentConfig.title = '数据结构开坑-codeforces'
     }
 </script>
 
@@ -303,6 +306,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/09/10/数据结构开坑/">数据结构开坑-codeforces</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/08/09/群论复习/">群论复习</a>
                 </span>
             </li>
@@ -316,12 +325,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/08/01/2018hdu多校第3场补题/">2018hdu多校第3场补题</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/03/25/test/">Test</a>
                 </span>
             </li>
             
@@ -343,13 +346,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/09/群论复习/">群论复习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/03/25/test/">Test</a>
+                    <a href="/2018/08/03/2018hdu多校第4场补题/">2018hdu多校第4场补题</a>
                 </span>
             </li>
             
@@ -361,7 +358,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/03/2018hdu多校第4场补题/">2018hdu多校第4场补题</a>
+                    <a href="/2018/09/10/数据结构开坑/">数据结构开坑-codeforces</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/08/09/群论复习/">群论复习</a>
                 </span>
             </li>
             
@@ -374,23 +377,27 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/03/25/test/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/09/10/数据结构开坑/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/03/25/test/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/09/10/数据结构开坑/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/03/25/test/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/09/10/数据结构开坑/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/群论/" style="font-size: 10.02624007790618px;" class="tag-cloud-link">群论</a>
+    <a href="/tags/多校/" style="font-size: 16.091421019639547px;" class="tag-cloud-link">多校</a>
     
-    <a href="/tags/多校/" style="font-size: 13.403718732908452px;" class="tag-cloud-link">多校</a>
+    <a href="/tags/hdu/" style="font-size: 8.097888178716953px;" class="tag-cloud-link">hdu</a>
     
-    <a href="/tags/hdu/" style="font-size: 8.766196673880316px;" class="tag-cloud-link">hdu</a>
+    <a href="/tags/数据结构/" style="font-size: 13.66422267789924px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/codeforces/" style="font-size: 19.181336129509887px;" class="tag-cloud-link">codeforces</a>
+    
+    <a href="/tags/群论/" style="font-size: 17.58133962407115px;" class="tag-cloud-link">群论</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -430,6 +437,8 @@
 </footer>
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 
 
 <!-- 回到顶端 -->
