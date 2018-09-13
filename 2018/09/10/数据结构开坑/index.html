@@ -238,6 +238,11 @@
 <h2 id="351D-Jeff-and-Removing-Periods"><a href="#351D-Jeff-and-Removing-Periods" class="headerlink" title="351D.Jeff and Removing Periods"></a>351D.Jeff and Removing Periods</h2><p>过题人数：395<br>通过情况：4A<br>题目大意：<br>给你一个序列，每个询问询问一段区间，问这个子序列需要多少如下操作次能够使这个子序列长度为0。<br>每次操作：先选择一段相同数字组成的，下标为等差数列的子数列，将其删除，把剩下的数随便重排。<br>题解：<br>注意每个操作以后，可以把剩下数重排。<br>这代表只有除了第一次，其他时候，数列都可以是形如<code>k1 k1 k1... k2 k2 k2... kx kx kx...</code>，这样显然剩下的最多要操作次数为剩下的不同的数的种类。<br>那么我们的任务就是处理第一次。<br>可以发现，答案要么是“数的种类数”，要么是“数的种类数+1”。分别是什么情况呢？<br>当原子数列存在一个数<code>k</code>，使得所有<code>a[i]=k</code>的<code>i</code>组成一个等差数列，答案就是前者，否则是后者。<br>然后这个问题可以怎么做呢？<br>好像网上许多人用了BIT，不过我用了一个叫做“回滚莫队”的东西，还是挺不错的，但是就是码的比较翔，常数也挺大的，没有被卡大概是因为数据不强。<br>复杂度$O(n \sqrt n)$。</p>
 <h2 id="848C-Goodbye-Souvenir"><a href="#848C-Goodbye-Souvenir" class="headerlink" title="848C.Goodbye Souvenir"></a>848C.Goodbye Souvenir</h2><p>过题人数：394<br>通过情况：3A<br>题意：<br>给出一个序列和一些操作，每次要么单点修改，要么询问一段区间内，每种权值的数出现的末位置减去首位置的和。权值范围是<code>1~n</code>。<br>题解：<br>考虑把问题转化一下，对于一个区间<code>[l,r]</code>，如果权值<code>k</code>在其中出现位置分别是<code>p1 p2 p3...px</code>，则贡献为<code>px-p1=(px-px-1)+...+(p3-p2)+(p2-p1)</code>。这样我们就做到了“去特殊化”。<br>其实题意还能进一步转化。把每个<code>(pre[a[i]],i)</code>看成一个点其权值为<code>i-pre[a[i]]</code>。这样，问题就变成统计坐标范围在<code>(l,l)</code>到<code>(r,r)</code>中的点的权值之和。<br>这是一个待修改二位数点的问题，现在才发现好像是某数据结构的模板，当然也可以用cdq+bit做，把操作顺序看做一维，剩下的<code>x</code>和<code>y</code>分别看做一维，其中操作一维相当于已经排好序了。<br>但是还有一个问题：怎样处理所有修改过后会新增或移除的<code>(pre[a[i]],i)</code>？<br>可以用set维护，每一个点对给以一个时间戳；对于移除的问题，我们只要加入一些权值取反的点就好了。时间戳永远是关键。<br>复杂度$O(nlog^2 n)$。</p>
 <h2 id="311D-Interval-Cubing"><a href="#311D-Interval-Cubing" class="headerlink" title="311D.Interval Cubing"></a>311D.Interval Cubing</h2><p>过题人数：394<br>通过情况：2A<br>题意：<br>给出一个序列，两种操作：<br>1.询问区间和；<br>2.区间所有数变成原来的立方。<br>在模<code>p=95542721</code>的意义下求答案。模数是个质数。<br>题解：<br>这似乎也是挺常见的套路题。<br>因为模数<code>p</code>是质数，则有$x^{\phi (p)}=x^{p-1}=x^{95542720} \equiv 1 (mod  p)$<br>由于序列中每个元素是$x,x^3,(x^3)^3,…,(((x^3)^3)^3)^…$<br>即$x^{3^0},x^{3^1},x^{3^2},…$<br>然后幸运地发现<code>3</code>在模<code>p</code>意义下的阶为<code>48</code>，很小。<br>这样我们可以维护一棵线段树，每个节点先维护一个lazytag（其实是除根节点以外的，即根节点提前更新完了的），表示“指数的指数”的增量，并维护一个当前区间所有数没有处理lazytag时所有数的0次方和，1次方和，…，47次方和。然后下传tag的时候循环位移即可。<br>复杂度$O(48nlogn)$。</p>
+<h2 id="372D-Choosing-Subtree-is-Fun"><a href="#372D-Choosing-Subtree-is-Fun" class="headerlink" title="372D.Choosing Subtree is Fun"></a>372D.Choosing Subtree is Fun</h2><p>过题人数：390<br>通过情况：5A<br>题意：<br>给出一个无根树，要选择其中一个大小小于等于<code>k</code>的连通块，使其价值最大。<br>连通块价值的定义：连通块中所有的节点上的数组成的最长一段连续区间的长度。<br>题解：<br>没想到，没想到。<br>我们这样来考虑：考虑一段区间<code>[l, r]</code>，如果把其中所有节点都覆盖并连通，最小需要的节点数是否不超过<code>k</code>。<br>首先根据单调性，当我们枚举<code>l</code>的时候，如果当前所需节点数不超过<code>k</code>，那么就将<code>r</code>单调右移。知道不能移位置，再将<code>l</code>移动1位，继续上面的操作。<br>现在的关键在于，如何再删除一个点和添加一个点的情况下快速维护信息。<br>很妙的想法：由于加入每个点时，新加入的边，对于原集合中每一个点到当前点的最短路径，一定都是个子集。所以当我们加入一个点<code>i</code>时，不妨将<code>i</code>和<code>i-1</code>之间的边的权值全部加1。删除时对应全部减1。<br>由于每个点加入并删除后，贡献又回到了0，加上上面加入边集的性质，正确性挺显然。<br>所以问题变成了维护某个时刻，图中有多少条边权值为不为0。由于权值始终大于等于0，即问题变成维护最小值个数。<br>可以用树链剖分+线段树来维护。<br>复杂度$O(nlog^{2}n)$。</p>
+<h2 id="266E-More-Queries-to-Array…"><a href="#266E-More-Queries-to-Array…" class="headerlink" title="266E.More Queries to Array…"></a>266E.More Queries to Array…</h2><p>过题人数：389<br>通过情况：2A<br>题意：<br>给出一个序列，两种操作：<br>1.区间赋值；<br>2.给出$k$，区间询问$\sum_{i=l}^r a_i \cdot (i-l+1)^k$。<br>题解：<br>比较水的一道题。<br>转变一下式子：</p>
+<script type="math/tex; mode=display">a_i \cdot (i-l+1)^k = a_i \cdot (i+(1-l))^k</script><p>然后用二项式定理展开，维护6种值在线段树上做就行了。<br>复杂度$O(6nlogn)$。</p>
+<h2 id="660F-Bear-and-Bowling-4"><a href="#660F-Bear-and-Bowling-4" class="headerlink" title="660F.Bear and Bowling 4"></a>660F.Bear and Bowling 4</h2><p>过题人数：387<br>通过情况：31N+<br>题意：<br>从一段序列中选出一段子区间$[l,r]$，其价值为：</p>
+<script type="math/tex; mode=display">\sum_{i=l}^r a_i * (i - l + 1)</script><p>求最大价值。<br>题解：<br>尝试模拟退火最多到test 27。<br>正解好像是斜优。<br>待填。</p>
 
     </div>
 </article>
@@ -349,13 +354,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/01/2018hdu多校第3场补题/">2018hdu多校第3场补题</a>
+                    <a href="/2018/08/03/2018hdu多校第4场补题/">2018hdu多校第4场补题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/03/2018hdu多校第4场补题/">2018hdu多校第4场补题</a>
+                    <a href="/2018/08/01/2018hdu多校第3场补题/">2018hdu多校第3场补题</a>
                 </span>
             </li>
             
@@ -392,15 +397,15 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/多校/" style="font-size: 13.587046170106099px;" class="tag-cloud-link">多校</a>
+    <a href="/tags/多校/" style="font-size: 19.777991483454052px;" class="tag-cloud-link">多校</a>
     
-    <a href="/tags/hdu/" style="font-size: 15.81757847220408px;" class="tag-cloud-link">hdu</a>
+    <a href="/tags/hdu/" style="font-size: 11.394061472753908px;" class="tag-cloud-link">hdu</a>
     
-    <a href="/tags/数据结构/" style="font-size: 12.183068688533009px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/数据结构/" style="font-size: 16.181359947490545px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/codeforces/" style="font-size: 11.528473386276222px;" class="tag-cloud-link">codeforces</a>
+    <a href="/tags/codeforces/" style="font-size: 10.15157682172162px;" class="tag-cloud-link">codeforces</a>
     
-    <a href="/tags/群论/" style="font-size: 19.732760158103726px;" class="tag-cloud-link">群论</a>
+    <a href="/tags/群论/" style="font-size: 15.17531128099412px;" class="tag-cloud-link">群论</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
