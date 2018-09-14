@@ -241,8 +241,9 @@
 <h2 id="372D-Choosing-Subtree-is-Fun"><a href="#372D-Choosing-Subtree-is-Fun" class="headerlink" title="372D.Choosing Subtree is Fun"></a>372D.Choosing Subtree is Fun</h2><p>过题人数：390<br>通过情况：5A<br>题意：<br>给出一个无根树，要选择其中一个大小小于等于<code>k</code>的连通块，使其价值最大。<br>连通块价值的定义：连通块中所有的节点上的数组成的最长一段连续区间的长度。<br>题解：<br>没想到，没想到。<br>我们这样来考虑：考虑一段区间<code>[l, r]</code>，如果把其中所有节点都覆盖并连通，最小需要的节点数是否不超过<code>k</code>。<br>首先根据单调性，当我们枚举<code>l</code>的时候，如果当前所需节点数不超过<code>k</code>，那么就将<code>r</code>单调右移。知道不能移位置，再将<code>l</code>移动1位，继续上面的操作。<br>现在的关键在于，如何再删除一个点和添加一个点的情况下快速维护信息。<br>很妙的想法：由于加入每个点时，新加入的边，对于原集合中每一个点到当前点的最短路径，一定都是个子集。所以当我们加入一个点<code>i</code>时，不妨将<code>i</code>和<code>i-1</code>之间的边的权值全部加1。删除时对应全部减1。<br>由于每个点加入并删除后，贡献又回到了0，加上上面加入边集的性质，正确性挺显然。<br>所以问题变成了维护某个时刻，图中有多少条边权值为不为0。由于权值始终大于等于0，即问题变成维护最小值个数。<br>可以用树链剖分+线段树来维护。<br>复杂度$O(nlog^{2}n)$。</p>
 <h2 id="266E-More-Queries-to-Array…"><a href="#266E-More-Queries-to-Array…" class="headerlink" title="266E.More Queries to Array…"></a>266E.More Queries to Array…</h2><p>过题人数：389<br>通过情况：2A<br>题意：<br>给出一个序列，两种操作：<br>1.区间赋值；<br>2.给出$k$，区间询问$\sum_{i=l}^r a_i \cdot (i-l+1)^k$。<br>题解：<br>比较水的一道题。<br>转变一下式子：</p>
 <script type="math/tex; mode=display">a_i \cdot (i-l+1)^k = a_i \cdot (i+(1-l))^k</script><p>然后用二项式定理展开，维护6种值在线段树上做就行了。<br>复杂度$O(6nlogn)$。</p>
-<h2 id="660F-Bear-and-Bowling-4"><a href="#660F-Bear-and-Bowling-4" class="headerlink" title="660F.Bear and Bowling 4"></a>660F.Bear and Bowling 4</h2><p>过题人数：387<br>通过情况：31N+<br>题意：<br>从一段序列中选出一段子区间$[l,r]$，其价值为：</p>
-<script type="math/tex; mode=display">\sum_{i=l}^r a_i * (i - l + 1)</script><p>求最大价值。<br>题解：<br>尝试模拟退火最多到test 27。<br>正解好像是斜优。<br>待填。</p>
+<h2 id="660F-Bear-and-Bowling-4"><a href="#660F-Bear-and-Bowling-4" class="headerlink" title="660F.Bear and Bowling 4"></a>660F.Bear and Bowling 4</h2><p>过题人数：387<br>通过情况：32A<br>题意：<br>从一段序列中选出一段子区间$[l,r]$，其价值为：</p>
+<script type="math/tex; mode=display">\sum_{i=l}^r a_i * (i - l + 1)</script><p>求最大价值。<br>题解：<br>尝试模拟退火最多到test 27。<br>正解好像是斜优。<br>upd：<br>发现真的可以变成一个dp。。。异样的dp（因为它的状态都太简单了，转移太奇怪了，都不能叫dp了）。<br>然后用上二分+斜优就行了。<br>复杂度$O(nlogn)$。</p>
+<h2 id="264E-Roadside-Trees"><a href="#264E-Roadside-Trees" class="headerlink" title="264E.Roadside Trees"></a>264E.Roadside Trees</h2><p>过题人数：168<br>通过情况：?<br>题意：?<br>题解：?<br>ps：模拟赛的原题，要补一补。</p>
 
     </div>
 </article>
@@ -397,15 +398,15 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/多校/" style="font-size: 9.79449412710482px;" class="tag-cloud-link">多校</a>
+    <a href="/tags/多校/" style="font-size: 8.148588891408892px;" class="tag-cloud-link">多校</a>
     
-    <a href="/tags/hdu/" style="font-size: 19.41709595234294px;" class="tag-cloud-link">hdu</a>
+    <a href="/tags/hdu/" style="font-size: 16.30987968972834px;" class="tag-cloud-link">hdu</a>
     
-    <a href="/tags/数据结构/" style="font-size: 11.470165512662291px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/数据结构/" style="font-size: 18.20805433368087px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/codeforces/" style="font-size: 11.55585940991694px;" class="tag-cloud-link">codeforces</a>
+    <a href="/tags/codeforces/" style="font-size: 13.986844078482257px;" class="tag-cloud-link">codeforces</a>
     
-    <a href="/tags/群论/" style="font-size: 18.990862618911038px;" class="tag-cloud-link">群论</a>
+    <a href="/tags/群论/" style="font-size: 19.268686385816128px;" class="tag-cloud-link">群论</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
